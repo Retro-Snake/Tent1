@@ -11,7 +11,9 @@ public class ZoomSCR : MonoBehaviour
     public float maxZoom = 10f;
     public float currentZoom = 5f;
 
-    
+    public GameObject Plan;
+    private float newAlpha;
+
 
     private void Start()
     {
@@ -43,11 +45,17 @@ public class ZoomSCR : MonoBehaviour
             // Применяем изменение масштаба камеры
             virtualCamera.m_Lens.OrthographicSize = currentZoom;
 
+            newAlpha = Mathf.InverseLerp(minZoom, maxZoom, currentZoom);
+            Debug.Log(newAlpha+"zoom-"+ currentZoom);
+            Plan.GetComponent<Peremena>().PlanDvij(Plan.transform, newAlpha);
+
+
             UpdateColliderSize();
         }
         #endregion
     }
     // часть кода для коллайдера необходима -  ДЛЯ ПРИРАВНИВАНИЯ ХИТ БОКСА ОБЪЕКТА ПЕРЕМЕШЕНИЯ(FollowPoint) К РАЗМЕРАМ ВИДИМОЙ КАМЕРЫ. НУЖНО ЧТО БЫ КАМЕРА В БОКАХ НЕ ТУПИЛА
+   
     #region РазмерКоллайдера/ CollaiderSizeUpdate
     private BoxCollider2D boxCollider; // берём переменную для коллайдера
     void UpdateColliderSize()
@@ -63,4 +71,5 @@ public class ZoomSCR : MonoBehaviour
         }
     }
     #endregion
+    
 }
