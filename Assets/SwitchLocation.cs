@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class SwitchLocation : MonoBehaviour
 {
-    public GameObject TEst;
+    public GameObject CurrentLocation;
+    public GameObject NextLocation;
     private Collider2D colliderToCompare;
     void Start()
     {       
@@ -23,15 +24,15 @@ public class SwitchLocation : MonoBehaviour
             {
                 Vector2 touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
 
-                if (colliderToCompare.OverlapPoint(touchPosition))
+                if (colliderToCompare.OverlapPoint(touchPosition))  // Точка касания находится внутри коллайдера объекта
                 {
 
                     //gameObject.SetActive(true);
 
-                    TEst.SetActive(false);
-
-                    // Точка касания находится внутри коллайдера объекта
-                    Debug.Log(":" + gameObject.name);
+                    CurrentLocation.SetActive(false);
+                    NextLocation.SetActive(true);
+                    //Выключаем не сцену , а игровой объект с его дочерними. В данном случаи необходимо для сохранения очков и удобства
+                    Debug.Log("Выключилась локация - " + CurrentLocation + "Переключились на локацию" + NextLocation);
                 }
             }
         }
