@@ -1,12 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using static UnityEngine.GraphicsBuffer;
+
 
 public class TouchImpact : MonoBehaviour
 {
     private SpriteRenderer rend ;
     public Color newColor;
+
+    //public GameObject ScoreUI;
+    public UpdateScore scoreUpdate;
 
     private Collider2D colliderToCompare;
 
@@ -35,6 +40,8 @@ public class TouchImpact : MonoBehaviour
                     UpdateColor(newColor);
                     // Точка касания находится внутри коллайдера объекта
                     Debug.Log("Цвет поменял у Объекта:" + gameObject.name);
+
+                    scoreUpdate.UpdateNumberText();
                 }                
             }
         }
