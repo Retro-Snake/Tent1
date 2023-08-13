@@ -6,7 +6,7 @@ using TMPro;
 
 public class UpdateScore : MonoBehaviour
 {
-    public TextMeshProUGUI TextScore;
+    public TextMeshProUGUI TextScore;    
     public int currentScore = 0;
     
     public void UpdateNumberText()
