@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,9 @@ public class SwitchLocation : MonoBehaviour
     public GameObject CurrentLocation;
     public GameObject NextLocation;
     private Collider2D colliderToCompare;
+
+    public SwitchCamera cameraSwitcher;
+    public int cameraIndexToSwitch;
     void Start()
     {       
         colliderToCompare = GetComponent<Collider2D>();
@@ -27,12 +31,16 @@ public class SwitchLocation : MonoBehaviour
                 if (colliderToCompare.OverlapPoint(touchPosition))  // Точка касания находится внутри коллайдера объекта
                 {
 
+                    
+                    cameraSwitcher.SwitchToCamera(cameraIndexToSwitch);
+
+
                     //gameObject.SetActive(true);
 
-                    CurrentLocation.SetActive(false);
-                    NextLocation.SetActive(true);
-                    //Выключаем не сцену , а игровой объект с его дочерними. В данном случаи необходимо для сохранения очков и удобства
-                    Debug.Log("Выключилась локация - " + CurrentLocation + "Переключились на локацию" + NextLocation);
+                    //CurrentLocation.SetActive(false);
+                    //NextLocation.SetActive(true);
+                    ////Выключаем не сцену , а игровой объект с его дочерними. В данном случаи необходимо для сохранения очков и удобства
+                    //Debug.Log("Выключилась локация - " + CurrentLocation + "Переключились на локацию" + NextLocation);
                 }
             }
         }

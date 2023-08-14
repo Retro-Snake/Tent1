@@ -18,15 +18,15 @@ public class SaveManager : MonoBehaviour
 
     private void Start()
     {
-       // progressFileName = progressFileName + ".dat";
-        progressFilePath = Path.Combine(Application.persistentDataPath, progressFileName);
-           
-    }    
+        progressFileName = progressFileName + ".dat";
+        progressFilePath = Path.Combine(Application.persistentDataPath, progressFileName);        
+    }
+
 
     public void SaveGame ()
     {
-        BinaryFormatter bf = new BinaryFormatter();
-        FileStream fs = new FileStream(progressFilePath,FileMode.Create);
+         BinaryFormatter bf = new BinaryFormatter();
+         FileStream fs = new FileStream(progressFilePath,FileMode.Create);
 
         Save save = new Save();
 
@@ -34,16 +34,12 @@ public class SaveManager : MonoBehaviour
 
         bf.Serialize(fs, save);
         fs.Close();
-        Debug.Log("save!");
 
     }   
     public void LoadGame()
     {
         if (!File.Exists(progressFilePath))
-        {
-            Debug.LogWarning("Файл сохранения не существует.");
             return;
-        }
 
         BinaryFormatter bf = new BinaryFormatter();
         FileStream fs = new FileStream(progressFilePath,FileMode.Open);
@@ -58,7 +54,6 @@ public class SaveManager : MonoBehaviour
             TentSaveList[i].GetComponent<TouchImpact>().LoadData(tent);
             i++;
         }
-        Debug.Log("Load!");
     }
 
     [System.Serializable]
@@ -84,7 +79,7 @@ public class SaveManager : MonoBehaviour
 
             public TentSaveData(Color color)
             {
-                TentColor = new ColarTent(color);
+                TentColor = new ColarTent(color);;
             }
         }
 
@@ -102,52 +97,26 @@ public class SaveManager : MonoBehaviour
             }
         }
     }
-    public void DeleteSaveFile()
-    {
-        {
-            // Сбрасываем параметры объектов в исходные значения
-            foreach (var tent in TentSaveList)
-            {
-                tent.GetComponent<TouchImpact>().ResetToDefault();
-            }
 
-            // Удаляем файл сохранения
-            if (File.Exists(progressFilePath))
-            {
-                File.Delete(progressFilePath);
-                Debug.Log("Сохранение удалено.");
-            }
-            else
-            {
-                Debug.LogWarning("Файл сохранения не найден.");
-            }
+    public void ResetGame()
+    {
+        // Сбрасываем параметры объектов в исходные значения
+        foreach (var tent in TentSaveList)
+        {
+            tent.GetComponent<TouchImpact>().ResetToDefault();
+        }
+
+        // Удаляем файл сохранения
+        if (File.Exists(progressFilePath))
+        {
+            File.Delete(progressFilePath);
+            Debug.Log("Сохранение удалено.");
+        }
+        else
+        {
+            Debug.LogWarning("Файл сохранения не найден.");
         }
     }
 
-    //public void SaveColorChangeData(List<ColorChangeData> colorChangeDataList)
-    //{
-    //    BinaryFormatter formatter = new BinaryFormatter();
-    //    FileStream fileStream = new FileStream(progressFilePath, FileMode.Create);
 
-    //    formatter.Serialize(fileStream, colorChangeDataList);
-    //    fileStream.Close();
-    //}
-
-    //public List<ColorChangeData> LoadColorChangeData()
-    //{
-    //    if (File.Exists(progressFilePath))
-    //    {
-    //        BinaryFormatter formatter = new BinaryFormatter();
-    //        FileStream fileStream = new FileStream(progressFilePath, FileMode.Open);
-
-    //        List<ColorChangeData> colorChangeDataList = formatter.Deserialize(fileStream) as List<ColorChangeData>;
-    //        fileStream.Close();
-
-    //        return colorChangeDataList;
-    //    }
-    //    else
-    //    {
-    //        return new List<ColorChangeData>();
-    //    }
-    //}
 }

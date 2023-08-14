@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System.IO;
+//Изначально Скрипт необходим для загрузки сохранения при запуске сцены
 public class EventLoadStart : MonoBehaviour
 {
     public SaveManager progressManager;
@@ -10,8 +11,7 @@ public class EventLoadStart : MonoBehaviour
     private void Start()
     {
         progressManager = FindObjectOfType<SaveManager>();
-       
-        
+               
         StartCoroutine(ExecuteAfterStart());
     }
 
@@ -23,15 +23,8 @@ public class EventLoadStart : MonoBehaviour
         StartAutoSave();
     }
     private void StartAutoSave()
-    {
-        progressManager.LoadGame();
-        InvokeRepeating("AutoSave", saveInterval, saveInterval);
+    {        
+            progressManager.LoadGame();        
     }
-
-    private void AutoSave()
-    {
-        
-        progressManager.SaveGame(); // Вызываем метод сохранения из вашего SaveManager
-        Debug.Log("Автоматическое сохранение выполнено.");
-    }
+    
 }

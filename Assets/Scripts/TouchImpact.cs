@@ -12,28 +12,22 @@ public class TouchImpact : MonoBehaviour
     public SpriteRenderer rend ;
     public Color newColor;
     private Color StartColor;
-    //public GameObject ScoreUI;
     public UpdateScore scoreUpdate;
-
     private Collider2D colliderToCompare;
-
     private SaveManager progressManager;
 
 
-    void Start()
-    {
+    void Start()    {
         rend = GetComponent<SpriteRenderer>();
         colliderToCompare = GetComponent<Collider2D>();
         progressManager = FindObjectOfType<SaveManager>();
+        scoreUpdate = FindObjectOfType<UpdateScore>();
         StartColor = rend.color;
-
     }
 
     // Update is called once per frame
     void Update()
-    {
-       
-
+    {    
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
@@ -43,13 +37,12 @@ public class TouchImpact : MonoBehaviour
                 Vector2 touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
 
                 if (colliderToCompare.OverlapPoint(touchPosition) && (rend.color != newColor))
-                {
-                   
+                {                   
                     UpdateColor(newColor);
                     // Точка касания находится внутри коллайдера объекта
                     Debug.Log("Цвет поменял у Объекта:" + gameObject.name);
 
-                    scoreUpdate.UpdateNumberText();// активируем изменение счёта
+                    scoreUpdate.UpdateNumberText(progressManager.progressFileName,1);// активируем изменение счёта
                     progressManager.SaveGame();
                 }                
             }
@@ -66,14 +59,14 @@ public class TouchImpact : MonoBehaviour
     {
         // Восстанавливаем исходный цвет
         UpdateColor(StartColor);
+        scoreUpdate.UpdateNumberText(progressManager.progressFileName,0);
 
-        // Сбрасываем другие параметры объекта
-        // ...
     }
 
     public void LoadData(Save.TentSaveData save)
     {
         rend.color = new Color (save.TentColor.r, save.TentColor.g,save.TentColor.b,save.TentColor.a);
+        scoreUpdate.LoadScore(progressManager.progressFileName);
     }
 
 
