@@ -5,15 +5,14 @@ using UnityEngine;
 
 public class SwitchLocation : MonoBehaviour
 {
-    public GameObject CurrentLocation;
-    public GameObject NextLocation;
     private Collider2D colliderToCompare;
 
     public SwitchCamera cameraSwitcher;
-    public int cameraIndexToSwitch;
+    public int cameraIndexToSwitch; //Номер камеры на которую переключаемся
     void Start()
     {       
         colliderToCompare = GetComponent<Collider2D>();
+        cameraSwitcher = FindObjectOfType<SwitchCamera>();
     }
     // Update is called once per frame
     void Update()
