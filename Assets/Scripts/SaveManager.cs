@@ -13,13 +13,17 @@ public class SaveManager : MonoBehaviour
     [Header("Имя сохранения.")]
     public string progressFileName ;
     private string progressFilePath;
-
+    
     public List<GameObject> TentSaveList= new List<GameObject>();
+
+    [Header("Имя трека который будет работать при запуске сцены")]
+    public string soundName;
 
     private void Start()
     {
         progressFileName = progressFileName + ".dat";
-        progressFilePath = Path.Combine(Application.persistentDataPath, progressFileName);        
+        progressFilePath = Path.Combine(Application.persistentDataPath, progressFileName);
+        FindObjectOfType<AudioManager>().Play(soundName);
     }
 
 
@@ -51,6 +55,7 @@ public class SaveManager : MonoBehaviour
         int i = 0;
         foreach(var tent in save.TentData)
         {
+
             TentSaveList[i].GetComponent<TouchImpact>().LoadData(tent);
             i++;
         }

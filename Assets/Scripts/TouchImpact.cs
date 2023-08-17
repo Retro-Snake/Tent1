@@ -32,7 +32,7 @@ public class TouchImpact : MonoBehaviour
         {
             Touch touch = Input.GetTouch(0);
 
-            if (touch.phase == TouchPhase.Began)
+            if (touch.phase == TouchPhase.Ended)
             {
                 Vector2 touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
 
