@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - InteractiveObject
   layers:
   - Default
   - TransparentFX
@@ -11,9 +12,9 @@ TagManager:
   - 
   - Water
   - UI
-  - CollisionLayer1
-  - CollisionLayer2
   - CollisionLayer3
+  - CollisionLayer2
+  - CollisionLayer1
   - UpCollider
   - 
   - 

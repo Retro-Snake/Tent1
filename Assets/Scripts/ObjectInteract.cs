@@ -10,11 +10,11 @@ public class ObjectInteract : MonoBehaviour
     private Collider2D colliderToCompare;
     public GameObject objectToSwitch;
     public string soundName;
+
     // Start is called before the first frame update
     void Start()
     {
         colliderToCompare = GetComponent<Collider2D>();
-        Debug.Log(colliderToCompare);
     }
 
     // Update is called once per frame
@@ -28,15 +28,24 @@ public class ObjectInteract : MonoBehaviour
             {
                 Vector2 touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
 
-                if (colliderToCompare.OverlapPoint(touchPosition))
-                {                    
-                    gameObject.SetActive(false);
-                    objectToSwitch.SetActive(true);
-                    Debug.Log(soundName);
-                    FindObjectOfType<AudioManager>().Play(soundName);
-                }
+                RaycastHit2D hit = Physics2D.Raycast(touchPosition, Vector2.zero);
+
+                if (hit.collider != null && hit.collider.gameObject == gameObject)
+                        {
+                        gameObject.SetActive(false);
+                            if (objectToSwitch != null)
+                            {
+                                objectToSwitch.SetActive(true);
+                            }                            
+                            FindObjectOfType<AudioManager>().Play(soundName);
+                        }
+                    }
+                
             }
         }
-    }
+
+
+
 }
+
    
