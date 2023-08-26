@@ -6,7 +6,6 @@ using System.IO;
 public class EventLoadStart : MonoBehaviour
 {
     public SaveManager progressManager;
-    public float saveInterval = 10.0f; // Интервал сохранения в секундах
 
     private void Start()
     {

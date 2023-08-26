@@ -15,36 +15,48 @@ public class TouchImpact : MonoBehaviour
     public UpdateScore scoreUpdate;
     private Collider2D colliderToCompare;
     private SaveManager progressManager;
+    private Vector3 previousPosition;
+    private Camera CameraTran;
+    private Vector3 cameraPreviousPosition; // Предыдущая позиция камеры
 
-
-    void Start()    {
+    void Start()    
+    {
         rend = GetComponent<SpriteRenderer>();
         colliderToCompare = GetComponent<Collider2D>();
         progressManager = FindObjectOfType<SaveManager>();
         scoreUpdate = FindObjectOfType<UpdateScore>();
         StartColor = rend.color;
+        CameraTran = FindAnyObjectByType<Camera>();
+        cameraPreviousPosition = CameraTran.transform.position;// Инициализируем начальную позицию камеры
     }
 
     // Update is called once per frame
     void Update()
-    {    
-        if (Input.touchCount > 0)
+    {
+        Vector3 currentPosition = CameraTran.transform.position;// Текущая позиция камеры
+        float distance = Vector3.Distance(currentPosition, cameraPreviousPosition); // Расстояние между текущей и предыдущей позициями
+        
+        cameraPreviousPosition = currentPosition; // Обновляем предыдущую позицию для следующего кадра  
+        if (distance < 0.1)
         {
-            Touch touch = Input.GetTouch(0);
-
-            if (touch.phase == TouchPhase.Ended)
+            if (Input.touchCount > 0)
             {
-                Vector2 touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
+                Touch touch = Input.GetTouch(0);
+                if (touch.phase == TouchPhase.Ended)
+                {
+                    Vector2 touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
 
-                if (colliderToCompare.OverlapPoint(touchPosition) && (rend.color != newColor))
-                {                   
-                    UpdateColor(newColor);
-                    // Точка касания находится внутри коллайдера объекта
-                    Debug.Log("Цвет поменял у Объекта:" + gameObject.name);
+                    RaycastHit2D hit = Physics2D.Raycast(touchPosition, Vector2.zero);                    
+                    if ((rend.color != newColor) && (hit.collider != null) && (hit.collider.gameObject == gameObject))
+                    {
+                        UpdateColor(newColor);
+                        // Точка касания находится внутри коллайдера объекта
+                        Debug.Log("Цвет поменял у Объекта:" + gameObject.name);
 
-                    scoreUpdate.UpdateNumberText(progressManager.progressFileName,1);// активируем изменение счёта
-                    progressManager.SaveGame();
-                }                
+                        scoreUpdate.UpdateNumberText(progressManager.progressFileName, 1);// активируем изменение счёта
+                        progressManager.SaveGame();
+                    }
+                }
             }
         }
     }   

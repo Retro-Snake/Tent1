@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MainMenuScript : MonoBehaviour
 {
+    [Header("Компонет основного меню")]
     public GameObject Main;
     private void Update()
     {

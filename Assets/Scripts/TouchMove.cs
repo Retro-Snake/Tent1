@@ -5,8 +5,12 @@ using UnityEngine;
 public class TouchMove : MonoBehaviour
 {
     private Touch touch;    
-    public float speedCam = 0.5f;
+    public float speedCam ;
     public GameObject Plan;
+    public void Start()
+    {
+        speedCam = PlayerPrefs.GetFloat("CameraSpeed", 0.2f);
+    }
     void Update()
     {
         if (Input.touchCount == 1)

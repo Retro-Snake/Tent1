@@ -9,13 +9,13 @@ public class AudioManager : MonoBehaviour
     void Awake()
     {
         foreach(SoundScript s in sounds) 
-        {
+        {            
             s.sorce = gameObject.AddComponent<AudioSource>();
             s.sorce.clip = s.clip;
             s.sorce.volume= s.volume;
             s.sorce.pitch= s.pitch;
          
-                }
+        }
     }
 
     public void Play(string name)
