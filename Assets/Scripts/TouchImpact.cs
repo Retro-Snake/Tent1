@@ -18,6 +18,7 @@ public class TouchImpact : MonoBehaviour
     private Vector3 previousPosition;
     private Camera CameraTran;
     private Vector3 cameraPreviousPosition; // Предыдущая позиция камеры
+    public string soundName;
 
     void Start()    
     {
@@ -55,6 +56,7 @@ public class TouchImpact : MonoBehaviour
 
                         scoreUpdate.UpdateNumberText(progressManager.progressFileName, 1);// активируем изменение счёта
                         progressManager.SaveGame();
+                        FindObjectOfType<AudioManager>().Play(soundName);// Вызываем звук с название soundName из адио менеджера
                     }
                 }
             }

@@ -777,7 +777,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 775f889312281e94e87e0576636f7d16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lvlnum: 1
+  lvlnum: 4
   EscapeWarning: {fileID: 0}
 --- !u!114 &99503144
 MonoBehaviour:
@@ -855,7 +855,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0dab8deaf9ab1f54499c0bf794c57afb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f4ac03c5032bb06408f918221b85fd3f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3297,7 +3297,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0423\u0440\u043E\u0432\u0435\u043D\u044C 1"
+  m_text: "\u0423\u0440\u043E\u0432\u0435\u043D\u044C 4"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0a01a8142392dfd4aa866296bfab649b, type: 2}
   m_sharedMaterial: {fileID: -1317157890979851261, guid: 0a01a8142392dfd4aa866296bfab649b, type: 2}
@@ -4759,7 +4759,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0423\u0440\u043E\u0432\u0435\u043D\u044C 1"
+  m_text: "\u0423\u0440\u043E\u0432\u0435\u043D\u044C 4"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0a01a8142392dfd4aa866296bfab649b, type: 2}
   m_sharedMaterial: {fileID: -1317157890979851261, guid: 0a01a8142392dfd4aa866296bfab649b, type: 2}
@@ -7442,7 +7442,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3575f56b5f62c348babe3428445ff65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  progressFileName: Lvl1
+  progressFileName: Lvl4
   TentSaveList: []
   soundName: 
 --- !u!114 &1416141150
@@ -7489,9 +7489,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: LvlStart, Assembly-CSharp
-        m_MethodName: PlayLvl
+      - m_Target: {fileID: 1416141149}
+        m_TargetAssemblyTypeName: SaveManager, Assembly-CSharp
+        m_MethodName: ResetGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7521,7 +7521,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0dab8deaf9ab1f54499c0bf794c57afb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f4ac03c5032bb06408f918221b85fd3f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

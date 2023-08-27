@@ -16,6 +16,8 @@ public class SoundScript
     [Header("Шаг громкости")]
     [Range(0.1f, 3f)]
     public float pitch;
+    [Header("Зациклиность")]
+    public bool loop;
 
     [HideInInspector]
     public AudioSource sorce;

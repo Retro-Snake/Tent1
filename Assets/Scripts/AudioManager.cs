@@ -14,6 +14,7 @@ public class AudioManager : MonoBehaviour
             s.sorce.clip = s.clip;
             s.sorce.volume= s.volume;
             s.sorce.pitch= s.pitch;
+            s.sorce.loop = s.loop;
          
         }
     }

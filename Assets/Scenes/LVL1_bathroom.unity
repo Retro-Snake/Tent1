@@ -624,6 +624,7 @@ MonoBehaviour:
   rend: {fileID: 0}
   newColor: {r: 1, g: 0.7254902, b: 0.33333334, a: 1}
   scoreUpdate: {fileID: 0}
+  soundName: 
 --- !u!1 &46497271
 GameObject:
   m_ObjectHideFlags: 0
@@ -756,6 +757,7 @@ MonoBehaviour:
   rend: {fileID: 0}
   newColor: {r: 1, g: 0.7254902, b: 0.33333334, a: 1}
   scoreUpdate: {fileID: 0}
+  soundName: 
 --- !u!212 &47276305
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -907,6 +909,7 @@ MonoBehaviour:
   rend: {fileID: 0}
   newColor: {r: 1, g: 0.7254902, b: 0.33333334, a: 1}
   scoreUpdate: {fileID: 0}
+  soundName: 
 --- !u!212 &51762357
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1127,7 +1130,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1744,6 +1747,7 @@ MonoBehaviour:
   rend: {fileID: 0}
   newColor: {r: 1, g: 0.7254902, b: 0.33333334, a: 1}
   scoreUpdate: {fileID: 0}
+  soundName: 
 --- !u!212 &190812408
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1828,7 +1832,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToSwitch: {fileID: 1136842909}
-  soundName: OpenDoor1
+  soundName: OpenDoor4
 --- !u!60 &197621851
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2484,6 +2488,7 @@ MonoBehaviour:
   rend: {fileID: 0}
   newColor: {r: 1, g: 0.7254902, b: 0.33333334, a: 1}
   scoreUpdate: {fileID: 0}
+  soundName: 
 --- !u!212 &380760682
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2670,7 +2675,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.026, y: 0.40500003}
   m_AnchorMax: {x: 1, y: 0.75500005}
-  m_AnchoredPosition: {x: -14.000183, y: 3}
+  m_AnchoredPosition: {x: -14.000153, y: 3}
   m_SizeDelta: {x: -43.119995, y: 1.1500244}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &429378581
@@ -3338,7 +3343,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToSwitch: {fileID: 0}
-  soundName: OpenDoor1
+  soundName: Op
 --- !u!1 &501566483
 GameObject:
   m_ObjectHideFlags: 0
@@ -3489,6 +3494,7 @@ MonoBehaviour:
   rend: {fileID: 0}
   newColor: {r: 1, g: 0.7254902, b: 0.33333334, a: 1}
   scoreUpdate: {fileID: 0}
+  soundName: 
 --- !u!1 &508997413
 GameObject:
   m_ObjectHideFlags: 0
@@ -4539,6 +4545,7 @@ MonoBehaviour:
   rend: {fileID: 0}
   newColor: {r: 1, g: 0.7254902, b: 0.33333334, a: 1}
   scoreUpdate: {fileID: 0}
+  soundName: 
 --- !u!212 &649500747
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4639,7 +4646,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToSwitch: {fileID: 1401906174}
-  soundName: OpenDoor1
+  soundName: Open
 --- !u!60 &650400978
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -4881,6 +4888,7 @@ MonoBehaviour:
   rend: {fileID: 0}
   newColor: {r: 1, g: 0.7254902, b: 0.33333334, a: 1}
   scoreUpdate: {fileID: 0}
+  soundName: 
 --- !u!1 &720880625
 GameObject:
   m_ObjectHideFlags: 0
@@ -5059,6 +5067,7 @@ MonoBehaviour:
   rend: {fileID: 0}
   newColor: {r: 1, g: 0.7254902, b: 0.33333334, a: 1}
   scoreUpdate: {fileID: 0}
+  soundName: 
 --- !u!212 &793550270
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5819,6 +5828,7 @@ MonoBehaviour:
   rend: {fileID: 0}
   newColor: {r: 1, g: 0.7254902, b: 0.33333334, a: 1}
   scoreUpdate: {fileID: 0}
+  soundName: 
 --- !u!212 &913869322
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6364,6 +6374,7 @@ MonoBehaviour:
   rend: {fileID: 0}
   newColor: {r: 1, g: 0.7254902, b: 0.33333334, a: 1}
   scoreUpdate: {fileID: 0}
+  soundName: 
 --- !u!212 &1057844998
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6511,6 +6522,7 @@ MonoBehaviour:
   rend: {fileID: 0}
   newColor: {r: 1, g: 0.7254902, b: 0.33333334, a: 1}
   scoreUpdate: {fileID: 0}
+  soundName: 
 --- !u!212 &1069731817
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6887,7 +6899,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToSwitch: {fileID: 197621849}
-  soundName: CloseDoor1
+  soundName: CloseDoor4
 --- !u!60 &1136842911
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -7363,6 +7375,7 @@ MonoBehaviour:
   rend: {fileID: 0}
   newColor: {r: 1, g: 0.7254902, b: 0.33333334, a: 1}
   scoreUpdate: {fileID: 0}
+  soundName: 
 --- !u!1 &1170465591
 GameObject:
   m_ObjectHideFlags: 0
@@ -7721,7 +7734,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1258480793
 Transform:
@@ -7779,7 +7792,7 @@ MonoBehaviour:
   - {fileID: 1676402235}
   - {fileID: 1901867103}
   - {fileID: 380760678}
-  soundName: Water
+  soundName: Arcade
 --- !u!114 &1258480795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7793,7 +7806,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   progressManager: {fileID: 0}
-  saveInterval: 500
 --- !u!114 &1258480796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7821,30 +7833,71 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
+  - name: Water
+    clip: {fileID: 8300000, guid: 2389cf13f76da4e8db45c795b1fbb0bd, type: 3}
+    volume: 0.266
+    pitch: 0.9
+    loop: 0
+    sorce: {fileID: 0}
+  - name: Arcade
+    clip: {fileID: 8300000, guid: 2cebe5ef59f447d4d803665e3ecf1a2f, type: 3}
+    volume: 0.02
+    pitch: 1
+    loop: 1
+    sorce: {fileID: 0}
   - name: OpenDoor1
-    clip: {fileID: 8300000, guid: 6cc4537865ae1479b9e7ac12ab172909, type: 3}
+    clip: {fileID: 8300000, guid: aae86464500f00c4f8e1bca013561642, type: 3}
     volume: 1
     pitch: 1.19
+    loop: 0
+    sorce: {fileID: 0}
+  - name: OpenDoor2
+    clip: {fileID: 8300000, guid: 186e539821beef147943637ba15e515f, type: 3}
+    volume: 1
+    pitch: 1.19
+    loop: 0
+    sorce: {fileID: 0}
+  - name: OpenDoor3
+    clip: {fileID: 8300000, guid: 44383d04910f8a34faaabacd76be72a7, type: 3}
+    volume: 1
+    pitch: 1.19
+    loop: 0
+    sorce: {fileID: 0}
+  - name: OpenDoor4
+    clip: {fileID: 8300000, guid: b57dfa9a7197d4145a2df8258c000439, type: 3}
+    volume: 1
+    pitch: 1.19
+    loop: 0
+    sorce: {fileID: 0}
+  - name: OpenDoor5
+    clip: {fileID: 8300000, guid: ac93f80387f43ff4f80355f01e68b2e7, type: 3}
+    volume: 1
+    pitch: 1.19
+    loop: 0
     sorce: {fileID: 0}
   - name: CloseDoor1
     clip: {fileID: 8300000, guid: 898f03a7c6c254aa2bffc1050c10ea08, type: 3}
     volume: 1
     pitch: 1.19
-    sorce: {fileID: 0}
-  - name: OpenDoor2
-    clip: {fileID: 8300000, guid: 4b66f0c5f1c594a6e9d91b86f719108c, type: 3}
-    volume: 1
-    pitch: 1.19
+    loop: 0
     sorce: {fileID: 0}
   - name: CloseDoor2
     clip: {fileID: 8300000, guid: c52f0b0e644464ca0b066d80091a5c8f, type: 3}
     volume: 1
     pitch: 1.19
+    loop: 0
     sorce: {fileID: 0}
-  - name: Water
-    clip: {fileID: 8300000, guid: 2389cf13f76da4e8db45c795b1fbb0bd, type: 3}
-    volume: 0.266
-    pitch: 0.9
+  - name: CloseDoor3
+    clip: {fileID: 8300000, guid: 0acfa935bc51568429e3ea88f0e944e3, type: 3}
+    volume: 1
+    pitch: 1.19
+    loop: 0
+    sorce: {fileID: 0}
+  - name: CloseDoor4
+    clip: {fileID: 8300000, guid: ad42c7c0277eaf9418fee0a87c368ee0, type: 3}
+    volume: 1
+    pitch: 1.19
+    loop: 0
     sorce: {fileID: 0}
 --- !u!1 &1268325672
 GameObject:
@@ -8101,6 +8154,7 @@ MonoBehaviour:
   rend: {fileID: 0}
   newColor: {r: 1, g: 0.7254902, b: 0.33333334, a: 1}
   scoreUpdate: {fileID: 0}
+  soundName: 
 --- !u!212 &1293440254
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8185,7 +8239,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToSwitch: {fileID: 1967600187}
-  soundName: CloseDoor1
+  soundName: CloseDoor4
 --- !u!60 &1296789694
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -8478,6 +8532,7 @@ MonoBehaviour:
   rend: {fileID: 0}
   newColor: {r: 1, g: 0.7254902, b: 0.33333334, a: 1}
   scoreUpdate: {fileID: 0}
+  soundName: 
 --- !u!212 &1298559810
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8673,7 +8728,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToSwitch: {fileID: 1557301206}
-  soundName: CloseDoor2
+  soundName: CloseDoor1
 --- !u!212 &1368364123
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8751,7 +8806,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -8902,7 +8957,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToSwitch: {fileID: 650400975}
-  soundName: OpenDoor1
+  soundName: Close
 --- !u!60 &1401906176
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -9434,6 +9489,7 @@ MonoBehaviour:
   rend: {fileID: 0}
   newColor: {r: 1, g: 0.7254902, b: 0.33333334, a: 1}
   scoreUpdate: {fileID: 0}
+  soundName: 
 --- !u!212 &1512290582
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9617,7 +9673,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToSwitch: {fileID: 1368364120}
-  soundName: OpenDoor2
+  soundName: OpenDoor1
 --- !u!60 &1557301209
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -9809,6 +9865,7 @@ MonoBehaviour:
   rend: {fileID: 0}
   newColor: {r: 1, g: 0.7254902, b: 0.33333334, a: 1}
   scoreUpdate: {fileID: 0}
+  soundName: 
 --- !u!212 &1560894319
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10253,6 +10310,7 @@ MonoBehaviour:
   rend: {fileID: 0}
   newColor: {r: 1, g: 0.7254902, b: 0.33333334, a: 1}
   scoreUpdate: {fileID: 0}
+  soundName: 
 --- !u!212 &1610521574
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10708,6 +10766,7 @@ MonoBehaviour:
   rend: {fileID: 0}
   newColor: {r: 1, g: 0.7254902, b: 0.33333334, a: 1}
   scoreUpdate: {fileID: 0}
+  soundName: 
 --- !u!212 &1676402239
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11134,6 +11193,7 @@ MonoBehaviour:
   rend: {fileID: 0}
   newColor: {r: 1, g: 0.7254902, b: 0.33333334, a: 1}
   scoreUpdate: {fileID: 0}
+  soundName: 
 --- !u!1 &1710912519
 GameObject:
   m_ObjectHideFlags: 0
@@ -11317,6 +11377,7 @@ MonoBehaviour:
   rend: {fileID: 0}
   newColor: {r: 1, g: 0.7254902, b: 0.33333334, a: 1}
   scoreUpdate: {fileID: 0}
+  soundName: 
 --- !u!1 &1724324470
 GameObject:
   m_ObjectHideFlags: 0
@@ -11760,6 +11821,7 @@ MonoBehaviour:
   rend: {fileID: 0}
   newColor: {r: 1, g: 0.7254902, b: 0.33333334, a: 1}
   scoreUpdate: {fileID: 0}
+  soundName: 
 --- !u!1 &1779424367
 GameObject:
   m_ObjectHideFlags: 0
@@ -12010,7 +12072,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToSwitch: {fileID: 2057213905}
-  soundName: OpenDoor1
+  soundName: OpenDoor3
 --- !u!60 &1816577712
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -12248,7 +12310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToSwitch: {fileID: 860587888}
-  soundName: OpenDoor1
+  soundName: OpenDoor2
 --- !u!60 &1831108512
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -12548,6 +12610,7 @@ MonoBehaviour:
   rend: {fileID: 0}
   newColor: {r: 1, g: 0.7254902, b: 0.33333334, a: 1}
   scoreUpdate: {fileID: 0}
+  soundName: 
 --- !u!212 &1901867107
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12753,7 +12816,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToSwitch: {fileID: 0}
-  soundName: OpenDoor1
+  soundName: Op
 --- !u!60 &1917426564
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -13001,6 +13064,7 @@ MonoBehaviour:
   rend: {fileID: 0}
   newColor: {r: 1, g: 0.7254902, b: 0.33333334, a: 1}
   scoreUpdate: {fileID: 0}
+  soundName: 
 --- !u!1 &1936163836
 GameObject:
   m_ObjectHideFlags: 0
@@ -13097,6 +13161,7 @@ MonoBehaviour:
   rend: {fileID: 0}
   newColor: {r: 1, g: 0.7254902, b: 0.33333334, a: 1}
   scoreUpdate: {fileID: 0}
+  soundName: 
 --- !u!212 &1936163840
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13181,7 +13246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToSwitch: {fileID: 1296789692}
-  soundName: OpenDoor1
+  soundName: OpenDoor4
 --- !u!60 &1967600189
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -13890,7 +13955,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToSwitch: {fileID: 1816577710}
-  soundName: CloseDoor1
+  soundName: CloseDoor3
 --- !u!60 &2057213908
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -14137,6 +14202,7 @@ MonoBehaviour:
   rend: {fileID: 0}
   newColor: {r: 1, g: 0.7254902, b: 0.33333334, a: 1}
   scoreUpdate: {fileID: 0}
+  soundName: 
 --- !u!1 &2074226880
 GameObject:
   m_ObjectHideFlags: 0
@@ -14578,6 +14644,7 @@ MonoBehaviour:
   rend: {fileID: 0}
   newColor: {r: 1, g: 0.7254902, b: 0.33333334, a: 1}
   scoreUpdate: {fileID: 0}
+  soundName: 
 --- !u!1 &2109177131
 GameObject:
   m_ObjectHideFlags: 0
