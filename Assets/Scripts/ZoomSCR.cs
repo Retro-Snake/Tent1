@@ -2,6 +2,8 @@ using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class ZoomSCR : MonoBehaviour
 {
@@ -14,6 +16,7 @@ public class ZoomSCR : MonoBehaviour
     public GameObject Plan;
     private float newAlpha;
 
+    public TextMeshProUGUI debugText; // Ссылка на компонент Text из UI
 
     private void Start()
     {
@@ -47,7 +50,11 @@ public class ZoomSCR : MonoBehaviour
 
             newAlpha = Mathf.InverseLerp(minZoom, maxZoom, currentZoom);
             Debug.Log(newAlpha+"zoom-"+ currentZoom);
-            Plan.GetComponent<Peremena>().PlanDvij(Plan.transform, newAlpha);
+            if(Plan != null)
+            {
+                Plan.GetComponent<Peremena>().PlanDvij(Plan.transform, newAlpha);
+            }
+            
 
 
             UpdateColliderSize();
@@ -64,10 +71,19 @@ public class ZoomSCR : MonoBehaviour
         boxCollider = GetComponent<BoxCollider2D>(); //присваеваем переменной наш бокс коллайдер
         if (virtualCamera != null && boxCollider != null) // Проверяем пустые ли значения 
         {
-            float cameraHeight = virtualCamera.m_Lens.OrthographicSize * 2f;// Переменная для понимания высоты. Берём из виртуальной камеры ортографическое значение высоты(что является половиной реальной высоты) и умножаем на 2
-            float cameraWidth = cameraHeight * virtualCamera.m_Lens.Aspect;// Переменная для ширины. Берём нашу высоту и умножаем на число - соотношения сторон(Aspect) 
+            float targetOrthoSize = virtualCamera.m_Lens.OrthographicSize;
+            float aspectRatio = (float)Screen.width / Screen.height;
+            float targetHeight = targetOrthoSize * 2;
+            float targetWidth = targetHeight * aspectRatio;
 
-            boxCollider.size = new Vector2(cameraWidth, cameraHeight);// присвоение уже реальному коллайдеру наши полученные значения
+            boxCollider.size = new Vector2(targetWidth, targetHeight);
+            //float cameraHeight = virtualCamera.m_Lens.OrthographicSize * 2f;// Переменная для понимания высоты. Берём из виртуальной камеры ортографическое значение высоты(что является половиной реальной высоты) и умножаем на 2
+            //float cameraWidth = cameraHeight * virtualCamera.m_Lens.Aspect;// Переменная для ширины. Берём нашу высоту и умножаем на число - соотношения сторон(Aspect) 
+
+            //boxCollider.size = new Vector2(cameraWidth, cameraHeight);// присвоение уже реальному коллайдеру наши полученные значения
+
+            debugText.text = "Camera Width: " + targetWidth + "\nCamera Height: " + targetHeight +
+                                 "\nBoxCollider Width: " + boxCollider.size.x + "\nBoxCollider Height: " + boxCollider.size.y;
         }
     }
     #endregion
