@@ -24,6 +24,7 @@ public class SaveManager : MonoBehaviour
         progressFileName = progressFileName + ".dat";
         progressFilePath = Path.Combine(Application.persistentDataPath, progressFileName);
         FindObjectOfType<AudioManager>().Play(soundName);
+
     }
 
 

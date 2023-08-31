@@ -19,6 +19,7 @@ public class TouchImpact : MonoBehaviour
     private Camera CameraTran;
     private Vector3 cameraPreviousPosition; // Предыдущая позиция камеры
     public string soundName;
+    public float interactFloat = 0.003f;
 
     void Start()    
     {
@@ -38,12 +39,12 @@ public class TouchImpact : MonoBehaviour
         float distance = Vector3.Distance(currentPosition, cameraPreviousPosition); // Расстояние между текущей и предыдущей позициями
         
         cameraPreviousPosition = currentPosition; // Обновляем предыдущую позицию для следующего кадра  
-        if (distance < 0.1)
+        if (distance < interactFloat)
         {
             if (Input.touchCount > 0)
             {
                 Touch touch = Input.GetTouch(0);
-                if (touch.phase == TouchPhase.Ended)
+                if (touch.phase == TouchPhase.Began)
                 {
                     Vector2 touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
 
@@ -57,6 +58,10 @@ public class TouchImpact : MonoBehaviour
                         scoreUpdate.UpdateNumberText(progressManager.progressFileName, 1);// активируем изменение счёта
                         progressManager.SaveGame();
                         FindObjectOfType<AudioManager>().Play(soundName);// Вызываем звук с название soundName из адио менеджера
+                        if (FindObjectOfType<NotificationInvoke>() != null)
+                        {
+                            FindObjectOfType<NotificationInvoke>().NotifInvoke(("Цвет поменял у Объекта:" + gameObject.name).ToString());// Вызываем звук с название soundName из адио менеджера
+                        }
                     }
                 }
             }

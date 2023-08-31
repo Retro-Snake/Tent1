@@ -81,9 +81,11 @@ public class ZoomSCR : MonoBehaviour
             //float cameraWidth = cameraHeight * virtualCamera.m_Lens.Aspect;// Переменная для ширины. Берём нашу высоту и умножаем на число - соотношения сторон(Aspect) 
 
             //boxCollider.size = new Vector2(cameraWidth, cameraHeight);// присвоение уже реальному коллайдеру наши полученные значения
-
-            debugText.text = "Camera Width: " + targetWidth + "\nCamera Height: " + targetHeight +
-                                 "\nBoxCollider Width: " + boxCollider.size.x + "\nBoxCollider Height: " + boxCollider.size.y;
+            if (debugText != null)
+            {
+                debugText.text = "Camera Width: " + targetWidth + "\nCamera Height: " + targetHeight +
+                                     "\nBoxCollider Width: " + boxCollider.size.x + "\nBoxCollider Height: " + boxCollider.size.y;
+            }
         }
     }
     #endregion

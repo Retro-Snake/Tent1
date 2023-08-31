@@ -10,42 +10,51 @@ public class ObjectInteract : MonoBehaviour
     private Collider2D colliderToCompare;
     public GameObject objectToSwitch;
     public string soundName;
+    private Vector3 previousPosition;
+    private Camera CameraTran;
+    private Vector3 cameraPreviousPosition; // Предыдущая позиция камеры
 
+    public float interactIndex = 0.02f;
     // Start is called before the first frame update
     void Start()
     {
         colliderToCompare = GetComponent<Collider2D>();
+        CameraTran = FindAnyObjectByType<Camera>();
+        cameraPreviousPosition = CameraTran.transform.position;// Инициализируем начальную позицию камеры
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.touchCount > 0)
+        Vector3 currentPosition = CameraTran.transform.position;// Текущая позиция камеры
+        float distance = Vector3.Distance(currentPosition, cameraPreviousPosition); // Расстояние между текущей и предыдущей позициями
+        cameraPreviousPosition = currentPosition; // Обновляем предыдущую позицию для следующего кадра  
+        if (distance < interactIndex)
         {
-            Touch touch = Input.GetTouch(0);
-
-            if (touch.phase == TouchPhase.Began)
+            if (Input.touchCount > 0)
             {
-                Vector2 touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
+                Touch touch = Input.GetTouch(0);
 
-                RaycastHit2D hit = Physics2D.Raycast(touchPosition, Vector2.zero);
+                if (touch.phase == TouchPhase.Began)
+                {
+                    Vector2 touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
 
-                if (hit.collider != null && hit.collider.gameObject == gameObject)
-                        {
+                    RaycastHit2D hit = Physics2D.Raycast(touchPosition, Vector2.zero);
+
+                    if (hit.collider != null && hit.collider.gameObject == gameObject)
+                    {
                         gameObject.SetActive(false);
-                            if (objectToSwitch != null)
-                            {
-                                objectToSwitch.SetActive(true);
-                            }                            
-                            FindObjectOfType<AudioManager>().Play(soundName);
+                        if (objectToSwitch != null)
+                        {
+                            objectToSwitch.SetActive(true);
                         }
+                        FindObjectOfType<AudioManager>().Play(soundName);
                     }
-                
+                }
+
             }
         }
-
-
-
+        }
 }
 
    

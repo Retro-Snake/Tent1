@@ -30,4 +30,5 @@ public class SwitchCamera : MonoBehaviour
             cameras[i].gameObject.SetActive(i == cameraIndex);
         }
     }
+
 }

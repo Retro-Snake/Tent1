@@ -7,7 +7,10 @@ public class LvlStart : MonoBehaviour
 {
     public int lvlnum;
     public GameObject EscapeWarning;
-
+    public float animSec = 1f;
+    public Animator transition;
+    public string animName;
+    
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape))
@@ -23,6 +26,23 @@ public class LvlStart : MonoBehaviour
     }
     public void PlayLvl()
     {
+        StartCoroutine(LoadAnim());
+
+    }
+
+    IEnumerator LoadAnim( )
+    {
+        if (transition != null && animName != (""))
+        {
+            transition.SetTrigger(animName);
+        }
+        else
+        {
+            animSec = 0;
+        }
+        
+        yield return new WaitForSeconds(animSec);   
         SceneManager.LoadScene(lvlnum);
     }
+
 }

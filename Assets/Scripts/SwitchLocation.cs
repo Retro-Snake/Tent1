@@ -9,6 +9,9 @@ public class SwitchLocation : MonoBehaviour
 
     public SwitchCamera cameraSwitcher;
     public int cameraIndexToSwitch; //Номер камеры на которую переключаемся
+    public float animSec = 1f;
+    public Animator transition;
+    public string animName;
     void Start()
     {       
         colliderToCompare = GetComponent<Collider2D>();
@@ -17,8 +20,6 @@ public class SwitchLocation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
@@ -29,19 +30,27 @@ public class SwitchLocation : MonoBehaviour
 
                 if (colliderToCompare.OverlapPoint(touchPosition))  // Точка касания находится внутри коллайдера объекта
                 {
-
                     
-                    cameraSwitcher.SwitchToCamera(cameraIndexToSwitch);
-
-
-                    //gameObject.SetActive(true);
-
-                    //CurrentLocation.SetActive(false);
-                    //NextLocation.SetActive(true);
-                    ////Выключаем не сцену , а игровой объект с его дочерними. В данном случаи необходимо для сохранения очков и удобства
-                    //Debug.Log("Выключилась локация - " + CurrentLocation + "Переключились на локацию" + NextLocation);
+                    StartCoroutine(LoadAnim());
                 }
             }
         }
+    }
+
+
+    IEnumerator LoadAnim()
+    {
+        
+        if (transition != null && animName != (""))
+        {
+            transition.SetTrigger(animName);
+                      
+        }else
+        {
+            animSec = 0;
+        }
+        
+        yield return new WaitForSeconds(animSec);
+        cameraSwitcher.SwitchToCamera(cameraIndexToSwitch);
     }
 }
