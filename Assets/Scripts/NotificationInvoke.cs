@@ -21,16 +21,21 @@ public class NotificationInvoke : MonoBehaviour
             cloack += Time.deltaTime;
             NotifExit(cloack);
         }
+        else
+        {
+            Notiff.ResetTrigger("Notification");
+        }
     }
     public void NotifInvoke(string TextInNotif)
     {
         Notiff.SetTrigger("Notification");
         textPro.text = TextInNotif;
         cloack= 0f;
+        
     }
     public void NotifExit(float timerStop)
     {
-        Notiff.SetFloat("Timer", timerStop);
+        Notiff.SetFloat("Timer", timerStop);//Меняет значение Float в аниматоре что является триггером если число больше установленного
     }
    
 }

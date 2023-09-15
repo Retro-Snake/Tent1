@@ -60,7 +60,7 @@ public class TouchImpact : MonoBehaviour
                         FindObjectOfType<AudioManager>().Play(soundName);// Вызываем звук с название soundName из адио менеджера
                         if (FindObjectOfType<NotificationInvoke>() != null)
                         {
-                            FindObjectOfType<NotificationInvoke>().NotifInvoke(("Цвет поменял у Объекта:" + gameObject.name).ToString());// Вызываем звук с название soundName из адио менеджера
+                            FindObjectOfType<NotificationInvoke>().NotifInvoke(("Цвет поменял у Объекта:" + gameObject.name).ToString());
                         }
                     }
                 }
