@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using static SaveManager;
 using static UnityEngine.GraphicsBuffer;
 using System.IO;
-using System;
+
 
 public class TouchImpact : MonoBehaviour
 {
@@ -20,8 +20,6 @@ public class TouchImpact : MonoBehaviour
     private Vector3 cameraPreviousPosition; // Предыдущая позиция камеры
     public string soundName;
     public float interactFloat = 0.003f;
-
-    
 
     void Start()    
     {
@@ -60,10 +58,10 @@ public class TouchImpact : MonoBehaviour
                         scoreUpdate.UpdateNumberText(progressManager.progressFileName, 1);// активируем изменение счёта
                         progressManager.SaveGame();
                         FindObjectOfType<AudioManager>().Play(soundName);// Вызываем звук с название soundName из адио менеджера
-                        /*if (FindObjectOfType<NotificationInvoke>() != null)
+                        if (FindObjectOfType<NotificationInvoke>() != null)
                         {
                             FindObjectOfType<NotificationInvoke>().NotifInvoke(("Цвет поменял у Объекта:" + gameObject.name).ToString());
-                        }*/ // Часть кода как шаблон для уведомлений в игре 
+                        }
                     }
                 }
             }
