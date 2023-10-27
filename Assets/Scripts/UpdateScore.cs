@@ -21,6 +21,7 @@ public class UpdateScore : MonoBehaviour
         
         PlayerPrefs.SetInt(lvlName, currentScore);
         PlayerPrefs.Save();
+        ScoreInvokeUpdate();
 
     }
     public void LoadScore(string lvlName)
@@ -34,7 +35,7 @@ public class UpdateScore : MonoBehaviour
     public void ScoreInvokeUpdate()
     {
         OnScoreChanged?.Invoke(currentScore);// Вызываем событие, чтобы оповестить другие части кода об изменении переменной
-
+        Debug.Log("Мы тут ScoreInvokeUpdate ");
     }
 
 }
