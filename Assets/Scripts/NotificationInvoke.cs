@@ -28,14 +28,19 @@ public class NotificationInvoke : MonoBehaviour
     }
     public void NotifInvoke(string TextInNotif)
     {
-        Notiff.SetTrigger("Notification");
-        textPro.text = TextInNotif;
-        cloack= 0f;
-        
+        StartCoroutine(NotifInvokeCorutin(TextInNotif));        
     }
     public void NotifExit(float timerStop)
     {
         Notiff.SetFloat("Timer", timerStop);//Меняет значение Float в аниматоре что является триггером если число больше установленного
+    }
+
+    public IEnumerator NotifInvokeCorutin(string TextInNotif)
+    {
+        yield return new WaitForSeconds(20f);
+        Notiff.SetTrigger("Notification");
+        textPro.text = TextInNotif;
+        cloack = 0f;
     }
    
 }

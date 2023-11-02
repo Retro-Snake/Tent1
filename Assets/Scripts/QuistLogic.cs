@@ -50,7 +50,6 @@ public class QuistLogic : MonoBehaviour
             {
                 FindObjectOfType<NotificationInvoke>().NotifInvoke(questNowNotif);
                 chekQuestIndex = false;
-                Debug.Log("Мы тут 1");
             }
             ActivateChildrenRecursively(fonZadnik.transform, false);
         }
@@ -59,8 +58,7 @@ public class QuistLogic : MonoBehaviour
             transform.position = zOld;
             questGameObject.transform.position = zOld;
             chekQuestIndex = true;
-            ActivateChildrenRecursively(fonZadnik.transform, true);                        
-            Debug.Log("Мы тут 55");
+            ActivateChildrenRecursively(fonZadnik.transform, true);  
         }      
         
     }
@@ -86,6 +84,8 @@ public class QuistLogic : MonoBehaviour
         {
          CurrentQuestListObject.Remove(gameObject);
         }
+        
+        
         if(CurrentQuestListObject.Count < QuestListObject.Count)
         {
             Debug.Log("попали в проверку1");           
