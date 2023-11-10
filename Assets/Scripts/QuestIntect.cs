@@ -13,6 +13,7 @@ public class QuestIntect : MonoBehaviour
     public SpriteRenderer rend;
     private Color StartColor;
     public Color SwitchColor;
+    public GameObject SwitchObjectDOP;// Если нужно включать или выключать дополнительный объект
 
 
     public float interactIndex = 0.02f;
@@ -49,10 +50,21 @@ public class QuestIntect : MonoBehaviour
                         if(rend.color != SwitchColor )
                         {
                             rend.color = SwitchColor;
+                            if (SwitchObjectDOP != null)
+                            {
+                                // SwitchObjectDOP.SetActive(!SwitchObjectDOP.activeSelf);
+                                SwitchObjectDOP.SetActive(true);
+                            }
+                            
                         }
                         else
                         {
                             rend.color = StartColor;
+                            if (SwitchObjectDOP != null)
+                            {
+                                //SwitchObjectDOP.SetActive(!SwitchObjectDOP.activeSelf); 
+                                SwitchObjectDOP.SetActive(false);
+                            }
                         }
 
                         FindObjectOfType<QuistLogic>().CorrectObjectCheck( gameObject);
