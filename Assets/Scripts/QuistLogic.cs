@@ -25,10 +25,10 @@ public class QuistLogic : MonoBehaviour
     [Header("Сообщение отрицательно Второе")]
     public List<string> QuestBadInvokeList = new List<string>();
 
-    private void Awake()
+    private void Start()
     {
         currentPosZ = transform.position;
-        questGameObject.transform.position = currentPosZ;
+        
         yBC.y = yBack;
         zOld = transform.position;
         questGameObject.transform.position = yBC;
@@ -56,7 +56,7 @@ public class QuistLogic : MonoBehaviour
         else
         {
             transform.position = zOld;
-            questGameObject.transform.position = zOld;
+           // questGameObject.transform.position = zOld;
             chekQuestIndex = true;
             ActivateChildrenRecursively(fonZadnik.transform, true);  
         }      

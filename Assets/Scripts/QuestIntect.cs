@@ -52,7 +52,7 @@ public class QuestIntect : MonoBehaviour
                             rend.color = SwitchColor;
                             if (SwitchObjectDOP != null)
                             {
-                                // SwitchObjectDOP.SetActive(!SwitchObjectDOP.activeSelf);
+                                // SwitchObjectDOP.SetActive(!SwitchObjectDOP.activeSelf);// Альтернативный метод активации игр объекта, переключает состояние из актуального в альтернативное, то есть вкл и выкл
                                 SwitchObjectDOP.SetActive(true);
                             }
                             

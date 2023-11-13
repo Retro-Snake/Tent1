@@ -10,6 +10,7 @@ public class NotificationInvoke : MonoBehaviour
     public TextMeshProUGUI textPro;
     public float cloack=20f;
     public float IndexTimer = 5f;
+    public float notTimer = 1f;
     private void Start()
     {
         Notiff = GetComponent<Animator>();
@@ -37,7 +38,7 @@ public class NotificationInvoke : MonoBehaviour
 
     public IEnumerator NotifInvokeCorutin(string TextInNotif)
     {
-        yield return new WaitForSeconds(20f);
+        yield return new WaitForSeconds(notTimer);
         Notiff.SetTrigger("Notification");
         textPro.text = TextInNotif;
         cloack = 0f;
