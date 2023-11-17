@@ -11,17 +11,12 @@ public class UpdateScore : MonoBehaviour
     public TextMeshProUGUI TextScore;    
     public int currentScore = 0;
     public event Action<int> OnScoreChanged; // —обытие дл€ отслеживани€
-    public string lvlNas;
 
     private void Awake()
     {
-        if (lvlNas != null)
-        {
-            LoadScore(lvlNas);
-        }
-    }
 
-
+    }    
+    
     public void UpdateNumberText(string lvlName,int scorReset)
     {
         currentScore++; 
@@ -35,7 +30,8 @@ public class UpdateScore : MonoBehaviour
     }
     public void LoadScore(string lvlName)
     {
-        int actualScore = PlayerPrefs.GetInt(lvlName); 
+        
+        int actualScore = PlayerPrefs.GetInt(lvlName);
         currentScore = actualScore;
         if (TextScore != null)
         {
@@ -47,7 +43,8 @@ public class UpdateScore : MonoBehaviour
 
     public void ScoreInvokeUpdate()
     {
-        OnScoreChanged?.Invoke(currentScore);// ¬ызываем событие, чтобы оповестить другие части кода об изменении переменной
+         
+         OnScoreChanged?.Invoke(currentScore);// ¬ызываем событие, чтобы оповестить другие части кода об изменении переменной
+       
     }
-
 }

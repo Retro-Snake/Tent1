@@ -11,15 +11,18 @@ public class ZoomSCR : MonoBehaviour
     public float zoomSpeed = 0.1f;
     public float minZoom = 2f;
     public float maxZoom = 10f;
+    public float maxZoomCor = 0f;// Корректировка 
     public float currentZoom = 5f;
 
     public GameObject Plan;
-    private float newAlpha;
+    private float newAlpha = 1;
 
     public TextMeshProUGUI debugText; // Ссылка на компонент Text из UI
 
     private void Start()
     {
+        float TestAlpha = Mathf.InverseLerp(minZoom, maxZoom + maxZoomCor, currentZoom);
+        Debug.Log(TestAlpha );
         UpdateColliderSize();
     }
 
@@ -48,7 +51,7 @@ public class ZoomSCR : MonoBehaviour
             // Применяем изменение масштаба камеры
             virtualCamera.m_Lens.OrthographicSize = currentZoom;
 
-            newAlpha = Mathf.InverseLerp(minZoom, maxZoom, currentZoom);
+            newAlpha = Mathf.InverseLerp(minZoom, maxZoom + maxZoomCor, currentZoom);
             Debug.Log(newAlpha+"zoom-"+ currentZoom);
             if(Plan != null)
             {

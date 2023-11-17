@@ -4,8 +4,7 @@ using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using static SaveManager.Save;
-
-
+using System;
 
 public class SaveManager : MonoBehaviour
 {
@@ -18,6 +17,9 @@ public class SaveManager : MonoBehaviour
 
     [Header("Имя трека который будет работать при запуске сцены")]
     public string soundName;
+
+    public event Action<int> ScoreReset;//событие для отслеживания ресета 
+    public int scoreActual;
 
     private void Start()
     {
@@ -117,11 +119,17 @@ public class SaveManager : MonoBehaviour
         {
             File.Delete(progressFilePath);
             Debug.Log("Сохранение удалено.");
+            ResetScore();
         }
         else
         {
             Debug.LogWarning("Файл сохранения не найден.");
         }
+    }
+
+    public void ResetScore()
+    {
+        PlayerPrefs.DeleteKey(progressFileName);
     }
 
 

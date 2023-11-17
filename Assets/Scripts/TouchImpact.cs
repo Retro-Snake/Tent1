@@ -51,7 +51,7 @@ public class TouchImpact : MonoBehaviour
                     Vector2 touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
 
                     RaycastHit2D hit = Physics2D.Raycast(touchPosition, Vector2.zero);                    
-                    if ((rend.color != newColor) && (hit.collider != null) && (hit.collider.gameObject == gameObject))
+                    if ((!ColorEqualsIgnoreAlpha(rend.color,newColor)) && (hit.collider != null) && (hit.collider.gameObject == gameObject))
                     {
                         UpdateColor(newColor);
                         // Точка касания находится внутри коллайдера объекта
@@ -68,7 +68,11 @@ public class TouchImpact : MonoBehaviour
                 }
             }
         }
-    }   
+    }
+    bool ColorEqualsIgnoreAlpha(Color32 color1, Color32 color2)
+    {
+        return color1.r == color2.r && color1.g == color2.g && color1.b == color2.b;
+    }
 
     private void UpdateColor(Color color)
     {        
@@ -80,8 +84,8 @@ public class TouchImpact : MonoBehaviour
     {
         // Восстанавливаем исходный цвет
         UpdateColor(StartColor);
-        scoreUpdate.UpdateNumberText(progressManager.progressFileName,0);
-
+        scoreUpdate.UpdateNumberText(progressManager.progressFileName,-1);
+        Debug.Log("ResetLog" + PlayerPrefs.HasKey(progressManager.progressFileName));
     }
 
     public void LoadData(Save.TentSaveData save)
