@@ -16,7 +16,7 @@ public class ScoreInLVLMenu : MonoBehaviour
 
     public void CheckScore()
     {
-        Debug.Log(LvlScore +" / "+ PlayerPrefs.HasKey(LvlScore));
+        
         actualScore = PlayerPrefs.HasKey(LvlScore) ? PlayerPrefs.GetInt(LvlScore): 0;
         ScoreUpdateText(actualScore);
 
@@ -28,7 +28,6 @@ public class ScoreInLVLMenu : MonoBehaviour
                 
         if (TextScore != null)
         {
-            Debug.Log(LvlScore + " мы тута" );
             TextScore.text = ScoreUpdate.ToString("000");
         }                
     }
