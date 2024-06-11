@@ -8018,7 +8018,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 509175638}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -10.137842, y: -4.649765, z: -0.00058057904}
+  m_LocalPosition: {x: -10.137842, y: -4.649765, z: -0.214}
   m_LocalScale: {x: 1.9254, y: 1.6518002, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8103,7 +8103,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.11999965, y: 0.3800001, z: -10}
+  m_LocalPosition: {x: 0.12114406, y: 0.37489986, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9033,10 +9033,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1597953047}
-        m_TargetAssemblyTypeName: LvlStart, Assembly-CSharp
-        m_MethodName: PlayLvl
-        m_Mode: 1
+      - m_Target: {fileID: 1423798150}
+        m_TargetAssemblyTypeName: YandexMobileAdsInterstitialDemoScript, Assembly-CSharp
+        m_MethodName: ShowInterstitial
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -10136,12 +10136,13 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.97444296, y: 5.565106}
-      - {x: -18.63169, y: 5.548191}
-      - {x: -18.61118, y: -5.4708996}
-      - {x: 1.1136167, y: -5.5143495}
-      - {x: 18.749807, y: -5.604123}
-      - {x: 18.579361, y: 5.6459155}
+    - - {x: 2.1880605, y: 5.4610643}
+      - {x: 0.88022035, y: 5.467345}
+      - {x: -18.466799, y: 5.4504304}
+      - {x: -18.469847, y: -5.422019}
+      - {x: 1.090061, y: -5.465469}
+      - {x: 18.39647, y: -5.4819217}
+      - {x: 18.414473, y: 5.474835}
 --- !u!4 &611364218
 Transform:
   m_ObjectHideFlags: 0
@@ -15099,7 +15100,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 953419217}
   m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 11.88, y: -5.127752, z: -0.32434204}
+  m_LocalPosition: {x: 11.88, y: -5.127752, z: -0.7}
   m_LocalScale: {x: 2.3, y: 2.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -23628,6 +23629,50 @@ MonoBehaviour:
   scoreUpdate: {fileID: 1308747193}
   soundName: 
   interactFloat: 0.003
+--- !u!1 &1423798149
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1423798151}
+  - component: {fileID: 1423798150}
+  m_Layer: 0
+  m_Name: yndreklama
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1423798150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1423798149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e53d48583c0b684684299b9eeacae94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1423798151
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1423798149}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.97795224, y: 0.76157665, z: 5.863846}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1426884822
 GameObject:
   m_ObjectHideFlags: 0
@@ -24429,13 +24474,15 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.97444296, y: 5.565106}
-      - {x: -4.6470013, y: 5.5831165}
-      - {x: -4.652443, y: 0.1937721}
-      - {x: -4.6679826, y: -5.571295}
-      - {x: 0.31240475, y: -5.563249}
-      - {x: 4.518186, y: -5.5800757}
-      - {x: 4.6364307, y: 5.55891}
+    - - {x: 0.97444296, y: 5.492723}
+      - {x: -4.5794773, y: 5.456445}
+      - {x: -4.584919, y: 0.21186805}
+      - {x: -4.5498147, y: -5.498912}
+      - {x: 0.1860183, y: -5.5264215}
+      - {x: 0.29552445, y: -5.5270576}
+      - {x: 4.6025934, y: -5.5438843}
+      - {x: 4.6232386, y: -1.0568205}
+      - {x: 4.568909, y: 5.486527}
 --- !u!1 &1479537437
 GameObject:
   m_ObjectHideFlags: 0
@@ -25006,6 +25053,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: CameraSetting, Assembly-CSharp
         m_MethodName: SetCameraSpeed
         m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 470082502}
+        m_TargetAssemblyTypeName: TouchMove, Assembly-CSharp
+        m_MethodName: Start
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

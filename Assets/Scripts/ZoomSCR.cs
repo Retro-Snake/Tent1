@@ -22,7 +22,7 @@ public class ZoomSCR : MonoBehaviour
     private void Start()
     {
         float TestAlpha = Mathf.InverseLerp(minZoom, maxZoom + maxZoomCor, currentZoom);
-        Debug.Log(TestAlpha );
+        //Debug.Log(TestAlpha );
         UpdateColliderSize();
     }
 

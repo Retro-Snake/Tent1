@@ -29,18 +29,23 @@ public class YandexMobileAdsInterstitialDemoScript : MonoBehaviour
 
     private void RequestInterstitial()
     {
-        string adUnitId = "demo-interstitial-yandex"; // замените на "R-M-XXXXXX-Y"
+        string adUnitId = "R-M-4146202-1"; // замените на "R-M-XXXXXX-Y" "R-M-4146202-1"  "demo-interstitial-yandex"
         AdRequestConfiguration adRequestConfiguration = new AdRequestConfiguration.Builder(adUnitId).Build();
         interstitialAdLoader.LoadAd(adRequestConfiguration);
     }
 
     public void ShowInterstitial(int lvlnum)
     {
+        lvlName = lvlnum;
         if (interstitial != null)
         {
             interstitial.Show();
-            lvlName = lvlnum;
-            DestroyInterstitial();
+            
+            //DestroyInterstitial();
+        }else
+        {
+
+            lvlSwitch();
         }
     }
 
@@ -48,7 +53,7 @@ public class YandexMobileAdsInterstitialDemoScript : MonoBehaviour
     {
         // The ad was loaded successfully. Now you can handle it.
         interstitial = args.Interstitial;
-
+        //Debug.Log("загруз");
         // Add events handlers for ad actions
         interstitial.OnAdClicked += HandleAdClicked;
         interstitial.OnAdShown += HandleInterstitialShown;
@@ -60,6 +65,7 @@ public class YandexMobileAdsInterstitialDemoScript : MonoBehaviour
 
     public void HandleInterstitialFailedToLoad(object sender, AdFailedToLoadEventArgs args)
     {
+        Debug.Log("Алярм"); 
         // Ad {args.AdUnitId} failed for to load with {args.Message}
         // Attempting to load a new ad from the OnAdFailedToLoad event is strongly discouraged.
     }
@@ -67,40 +73,42 @@ public class YandexMobileAdsInterstitialDemoScript : MonoBehaviour
     public void HandleInterstitialDismissed(object sender, EventArgs args)
     {
         // Called when ad is dismissed.
-
         // Clear resources after Ad dismissed.
         DestroyInterstitial();
 
         // Now you can preload the next interstitial ad.
         RequestInterstitial();
+        //lvlSwitch();
     }
 
     public void HandleInterstitialFailedToShow(object sender, EventArgs args)
     {
         // Called when an InterstitialAd failed to show.
-
         // Clear resources after Ad dismissed.
         DestroyInterstitial();
 
         // Now you can preload the next interstitial ad.
         RequestInterstitial();
+        lvlSwitch();
     }
 
     public void HandleAdClicked(object sender, EventArgs args)
     {
         // Called when a click is recorded for an ad.
+        lvlSwitch();
     }
 
     public void HandleInterstitialShown(object sender, EventArgs args)
     {
-        Debug.Log("Посмотрели и попали");
         // Called when ad is shown.
-        SceneManager.LoadScene(lvlName);
+        lvlSwitch();
     }
 
     public void HandleImpression(object sender, ImpressionData impressionData)
     {
         // Called when an impression is recorded for an ad.
+
+        lvlSwitch();
     }
 
     public void DestroyInterstitial()
@@ -110,5 +118,12 @@ public class YandexMobileAdsInterstitialDemoScript : MonoBehaviour
             interstitial.Destroy();
             interstitial = null;
         }
+    }
+
+    public void lvlSwitch()
+    {
+        SceneManager.LoadScene(lvlName);
+
+        DestroyInterstitial();
     }
 }

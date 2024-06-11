@@ -7728,7 +7728,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 509175638}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.01, y: 0.67, z: -0.00058057904}
+  m_LocalPosition: {x: -15.01, y: 0.67, z: -0.4}
   m_LocalScale: {x: 0.3199921, y: 0.30960634, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7813,7 +7813,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.11999968, y: 0.3800001, z: -14.279419}
+  m_LocalPosition: {x: 0.12004283, y: 0.3999443, z: -14.279419}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10033,11 +10033,11 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: 0.97444296, y: 5.565106}
-      - {x: -14.829635, y: 5.5778513}
-      - {x: -14.89567, y: -5.5908265}
+      - {x: -14.852098, y: 5.5467744}
+      - {x: -14.737614, y: -5.4375052}
       - {x: 1.0649934, y: -5.6026354}
-      - {x: 14.931684, y: -5.604123}
-      - {x: 14.897599, y: 5.539804}
+      - {x: 14.855973, y: -5.516841}
+      - {x: 14.827514, y: 5.519028}
 --- !u!4 &611364218
 Transform:
   m_ObjectHideFlags: 0
@@ -12401,7 +12401,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 470082502}
+        m_TargetAssemblyTypeName: TouchMove, Assembly-CSharp
+        m_MethodName: Start
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1749823572}
         m_TargetAssemblyTypeName: TouchMove, Assembly-CSharp
         m_MethodName: Start
         m_Mode: 1
@@ -20694,14 +20706,14 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.94452, y: 5.64965}
-      - {x: -4.7222824, y: 5.7249074}
-      - {x: -4.7435513, y: 1.4473373}
-      - {x: -4.777911, y: 0.17014025}
-      - {x: -4.7432632, y: -5.7603498}
-      - {x: 0.2622175, y: -5.7286725}
-      - {x: 4.7787843, y: -5.6746025}
-      - {x: 4.7561293, y: 5.643454}
+    - - {x: 0.90603644, y: 5.4865685}
+      - {x: -4.549113, y: 5.4893446}
+      - {x: -4.570381, y: 1.4473373}
+      - {x: -4.547019, y: 0.115779705}
+      - {x: -4.5159826, y: -5.449586}
+      - {x: 0.21847984, y: -5.5047746}
+      - {x: 4.5524383, y: -5.4766684}
+      - {x: 4.4867535, y: 5.4622526}
 --- !u!1 &1506556624
 GameObject:
   m_ObjectHideFlags: 0
@@ -21245,10 +21257,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1258480794}
-        m_TargetAssemblyTypeName: LvlStart, Assembly-CSharp
-        m_MethodName: PlayLvl
-        m_Mode: 1
+      - m_Target: {fileID: 1540367595}
+        m_TargetAssemblyTypeName: YandexMobileAdsInterstitialDemoScript, Assembly-CSharp
+        m_MethodName: ShowInterstitial
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -21295,6 +21307,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1537339041}
   m_CullTransparentMesh: 1
+--- !u!1 &1540367594
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1540367596}
+  - component: {fileID: 1540367595}
+  m_Layer: 0
+  m_Name: yndreklama
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1540367595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1540367594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e53d48583c0b684684299b9eeacae94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1540367596
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1540367594}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.97795224, y: 0.76157665, z: 5.863846}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1549828595
 GameObject:
   m_ObjectHideFlags: 0

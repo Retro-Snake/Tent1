@@ -23,7 +23,7 @@ public class EventLoadStart : MonoBehaviour
     }
     private void StartAutoSave()
     {        
-            progressManager.LoadGame();        
+            progressManager.LoadGame();
     }
     
 }
